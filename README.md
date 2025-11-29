@@ -1,4 +1,4 @@
-# つくよみちゃん LLM ファインチューニング v2
+# つくよみちゃん LLM ファインチューニング
 
 [つくよみちゃん会話AI育成計画](https://tyc.rei-yumesaki.net/material/kaiwa-ai/)の公式データを使用して、llm-jpベースモデルをSFT（Supervised Fine-Tuning）でファインチューニングしたプロジェクトです。
 
