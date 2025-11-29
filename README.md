@@ -40,7 +40,7 @@ uv sync
 
 ```bash
 # データのダウンロードと変換
-uv run python download_and_convert.py
+uv run download_and_convert.py
 ```
 
 これにより、`./data/tsukuyomi.jsonl` が生成されます。
@@ -48,7 +48,7 @@ uv run python download_and_convert.py
 ### 4. 学習の実行
 
 ```bash
-uv run python sft_train.py
+uv run sft_train.py
 ```
 
 学習結果は `./results/{model_path}/sft_model/` に保存されます。
@@ -58,7 +58,7 @@ uv run python sft_train.py
 SFTアダプターをベースモデルにマージして統合モデルを作成できます。
 
 ```bash
-uv run python merge_model.py
+uv run merge_model.py
 ```
 
 マージされたモデルは `./results/{base_model}/merged_model/` に保存されます。
@@ -126,7 +126,7 @@ tsukuyomichan-llm-ftv2/
 ### データのダウンロードと変換
 
 ```bash
-uv run python download_and_convert.py
+uv run download_and_convert.py
 ```
 
 このスクリプトは：
@@ -137,7 +137,7 @@ uv run python download_and_convert.py
 ### SFT学習
 
 ```bash
-uv run python sft_train.py [オプション]
+uv run sft_train.py [オプション]
 ```
 
 **主なオプション:**
@@ -152,7 +152,7 @@ uv run python sft_train.py [オプション]
 ### モデルマージ
 
 ```bash
-uv run python merge_model.py [オプション]
+uv run merge_model.py [オプション]
 ```
 
 **主なオプション:**
