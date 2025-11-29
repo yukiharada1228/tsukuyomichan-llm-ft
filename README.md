@@ -66,7 +66,7 @@ uv run merge_model.py
 ## 📁 プロジェクト構成
 
 ```
-tsukuyomichan-llm-ftv2/
+tsukuyomichan-llm-ft/
 ├── download_and_convert.py    # データダウンロード・変換スクリプト
 ├── sft_train.py                # SFT学習スクリプト
 ├── merge_model.py              # モデルマージスクリプト
