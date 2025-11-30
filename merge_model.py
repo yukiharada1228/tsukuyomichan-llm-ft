@@ -133,7 +133,7 @@ def main():
     parser.add_argument(
         "--base_model",
         type=str,
-        default="llm-jp/llm-jp-3.1-1.8b-instruct4",
+        default="sbintuitions/sarashina2.2-3b",
     )
     parser.add_argument(
         "--device",

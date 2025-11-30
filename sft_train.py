@@ -43,7 +43,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--model_path", type=str, default="llm-jp/llm-jp-3.1-1.8b-instruct4"
+        "--model_path", type=str, default="sbintuitions/sarashina2.2-3b"
     )
     parser.add_argument("--data_path", type=str, default="./data/tsukuyomi.jsonl")
     parser.add_argument("--num_epochs", type=int, default=3)
