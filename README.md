@@ -29,9 +29,6 @@ cd tsukuyomichan-llm-ft
 このプロジェクトは `uv` を使用して依存関係を管理します。
 
 ```bash
-# uvのインストール（未インストールの場合）
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
 # 依存関係のインストール
 uv sync
 ```
