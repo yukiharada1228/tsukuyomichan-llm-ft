@@ -133,7 +133,7 @@ def main():
     parser.add_argument(
         "--base_model",
         type=str,
-        default="sbintuitions/sarashina2.2-3b",
+        default="sbintuitions/sarashina2.2-3b-instruct-v0.1",
     )
     parser.add_argument(
         "--device",

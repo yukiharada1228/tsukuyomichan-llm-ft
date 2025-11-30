@@ -1,11 +1,11 @@
 # つくよみちゃん LLM ファインチューニング
 
-[つくよみちゃん会話AI育成計画](https://tyc.rei-yumesaki.net/material/kaiwa-ai/)の公式データを使用して、llm-jpベースモデルをSFT（Supervised Fine-Tuning）でファインチューニングしたプロジェクトです。
+[つくよみちゃん会話AI育成計画](https://tyc.rei-yumesaki.net/material/kaiwa-ai/)の公式データを使用して、日本語LLMをSFT（Supervised Fine-Tuning）でファインチューニングするプロジェクトです。
 
 ## クイックスタート
 
 ```bash
-ollama run hf.co/yukiharada1228/tsukuyomichan-llm-jp-3.1-1.8b-instruct4-GGUF:Q4_K_M
+ollama run hf.co/yukiharada1228/tsukuyomichan-sarashina2.2-3b-instruct-v0.1-GGUF:Q4_K_M
 ```
 
 ## ✨ 特徴
@@ -98,7 +98,7 @@ tsukuyomichan-llm-ft/
 
 | パラメータ | デフォルト値 | 説明 |
 |-----------|-------------|------|
-| `--model_path` | `llm-jp/llm-jp-3.1-1.8b-instruct4` | ベースモデルのパス |
+| `--model_path` | `sbintuitions/sarashina2.2-3b-instruct-v0.1` | ベースモデルのパス |
 | `--data_path` | `./data/tsukuyomi.jsonl` | 学習データのパス |
 | `--num_epochs` | 3 | エポック数 |
 | `--batch_size` | 2 | バッチサイズ |
@@ -138,7 +138,7 @@ uv run sft_train.py [オプション]
 ```
 
 **主なオプション:**
-- `--model_path`: ベースモデルのパス（デフォルト: `llm-jp/llm-jp-3.1-1.8b-instruct4`）
+- `--model_path`: ベースモデルのパス（デフォルト: `sbintuitions/sarashina2.2-3b-instruct-v0.1`）
 - `--data_path`: 学習データのパス（デフォルト: `./data/tsukuyomi.jsonl`）
 - `--num_epochs`: エポック数（デフォルト: 3）
 - `--batch_size`: バッチサイズ（デフォルト: 2）
@@ -153,14 +153,14 @@ uv run merge_model.py [オプション]
 ```
 
 **主なオプション:**
-- `--base_model`: ベースモデルのパス（デフォルト: `llm-jp/llm-jp-3.1-1.8b-instruct4`）
+- `--base_model`: ベースモデルのパス（デフォルト: `sbintuitions/sarashina2.2-3b-instruct-v0.1`）
 - `--device`: 使用するデバイス（デフォルト: `auto`）
 
 `adapter_path` と `output_path` は `base_model` から自動的に生成されます。
 
 ## 技術仕様
 
-* **ベースモデル**: LLM-JP 3.1 1.8B Instruct4
+* **ベースモデル**: Sarashina2.2 3B Instruct v0.1
 * **学習データ**: つくよみちゃん会話AI育成計画
 * **ファインチューニング**: PEFT (LoRA + QLoRA)
 * **量子化**: QLoRA 4bit (NF4)
@@ -174,8 +174,8 @@ uv run merge_model.py [オプション]
 
 ### 🔹 ベースモデル（構造・学習済み重み・推論コード）
 
-* [LLM-JP 3.1 1.8B Instruct4](https://huggingface.co/llm-jp/llm-jp-3.1-1.8b-instruct4) © LLM-JP Project
-* ライセンス: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+* [Sarashina2.2 3B Instruct v0.1](https://huggingface.co/sbintuitions/sarashina2.2-3b-instruct-v0.1) © SB Intuitions
+  * ライセンス: [MIT License](https://opensource.org/licenses/MIT)
 
 ### 🔸 学習データ（追加学習した会話テキストデータ）
 
@@ -203,7 +203,7 @@ uv run merge_model.py [オプション]
 
 本モデルの動作画面のスクリーンショットやキャプチャ動画を投稿する場合、または生成された会話を元ネタとする作品を公開する場合は、以下のクレジットを記載してください：
 
-- **モデル名**: `yukiharada1228/tsukuyomichan-llm-jp-3.1-1.8b-instruct4-GGUF`
+- **モデル名**: 使用したファインチューニング済みモデルの名前（例: `yukiharada1228/tsukuyomichan-sarashina2.2-3b-instruct-v0.1-GGUF`）
 - **キャラクター**: つくよみちゃん
 
 ### 📌 改変・再配布等について
@@ -226,13 +226,16 @@ uv run merge_model.py [オプション]
 
 ## 関連リンク
 
-**素材配布元:**
+**ベースモデル:**
 
-* [LLM-JP 3.1 1.8B Instruct4](https://huggingface.co/llm-jp/llm-jp-3.1-1.8b-instruct4)
+* [Sarashina2.2 3B Instruct v0.1](https://huggingface.co/sbintuitions/sarashina2.2-3b-instruct-v0.1)
+
+**学習データ:**
+
 * [つくよみちゃん会話AI育成計画](https://tyc.rei-yumesaki.net/material/kaiwa-ai/)
 * [つくよみちゃん公式サイト](https://tyc.rei-yumesaki.net)
 
-**開発者:**
+**このプロジェクト:**
 
 * [プロジェクトリポジトリ](https://github.com/yukiharada1228/tsukuyomichan-llm-ft)
 * [問題・質問 (GitHub Issues)](https://github.com/yukiharada1228/tsukuyomichan-llm-ft/issues)
