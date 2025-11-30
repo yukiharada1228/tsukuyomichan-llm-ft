@@ -234,8 +234,3 @@ uv run merge_model.py [オプション]
 
 * [つくよみちゃん会話AI育成計画](https://tyc.rei-yumesaki.net/material/kaiwa-ai/)
 * [つくよみちゃん公式サイト](https://tyc.rei-yumesaki.net)
-
-**このプロジェクト:**
-
-* [プロジェクトリポジトリ](https://github.com/yukiharada1228/tsukuyomichan-llm-ft)
-* [問題・質問 (GitHub Issues)](https://github.com/yukiharada1228/tsukuyomichan-llm-ft/issues)
