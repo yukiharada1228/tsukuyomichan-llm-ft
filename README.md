@@ -31,6 +31,9 @@ cd tsukuyomichan-llm-ft
 ```bash
 # 依存関係のインストール
 uv sync
+
+# 開発用の依存関係もインストールする場合
+uv sync --group dev
 ```
 
 ### 3. 学習データの準備
@@ -167,6 +170,47 @@ uv run merge_model.py [オプション]
 * **最大コンテキスト**: 4,096トークン
 * **学習フレームワーク**: TRL (SFTTrainer)
 * **依存関係管理**: uv
+
+## 🧪 開発
+
+### テスト実行
+
+```bash
+# テストの実行
+uv run pytest tests/ -v
+
+# カバレッジ付きでテスト実行
+uv run pytest tests/ -v --cov=. --cov-report=term-missing
+
+# カバレッジレポート（HTML）の生成
+uv run pytest tests/ --cov=. --cov-report=html
+```
+
+### コード品質チェック
+
+```bash
+# コードフォーマット
+uv run black .
+
+# コードフォーマットチェック
+uv run black --check .
+
+# リンター実行
+uv run ruff check .
+
+# リンターによる自動修正
+uv run ruff check . --fix
+```
+
+### CI/CD
+
+このプロジェクトはGitHub Actionsを使用してCI/CDを実行しています。
+
+- **テスト**: Python 3.11と3.12でテストを実行
+- **リント**: ruffとblackによるコード品質チェック
+- **カバレッジ**: Codecovによるカバレッジレポート
+
+詳細は`.github/workflows/ci.yml`を参照してください。
 
 ---
 

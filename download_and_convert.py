@@ -67,9 +67,7 @@ def download_tsukuyomi_data(logger):
             f.write(response.content)
 
         file_size = len(response.content)
-        logger.info(
-            f"データのダウンロードが完了しました (ファイルサイズ: {file_size:,} bytes)"
-        )
+        logger.info(f"データのダウンロードが完了しました (ファイルサイズ: {file_size:,} bytes)")
         logger.debug(f"一時ファイル保存先: {temp_file}")
         return True
 
@@ -170,9 +168,7 @@ def convert_to_jsonl(logger):
             for item in jsonl_data:
                 f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-        logger.info(
-            f"変換完了: {processed_count}件の会話データをJSONL形式で保存しました"
-        )
+        logger.info(f"変換完了: {processed_count}件の会話データをJSONL形式で保存しました")
         logger.info(f"スキップされた行数: {skipped_count}件")
         logger.debug(f"出力ファイル: {output_file}")
         return True, output_file

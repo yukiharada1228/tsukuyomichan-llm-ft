@@ -6,8 +6,7 @@ import sys
 
 import torch
 from datasets import Dataset
-from peft import (LoraConfig, TaskType, get_peft_model,
-                  prepare_model_for_kbit_training)
+from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.utils.quantization_config import BitsAndBytesConfig
 from trl import SFTConfig, SFTTrainer
@@ -68,9 +67,7 @@ def main():
     logger.info(f"エポック数: {args.num_epochs}")
     logger.info(f"バッチサイズ: {args.batch_size}")
     logger.info(f"学習率: {args.learning_rate}")
-    logger.info(
-        f"QLoRA設定: r={args.lora_r}, alpha={args.lora_alpha}, dropout={args.lora_dropout}"
-    )
+    logger.info(f"QLoRA設定: r={args.lora_r}, alpha={args.lora_alpha}, dropout={args.lora_dropout}")
     logger.info("=" * 60)
 
     # データファイルの存在確認

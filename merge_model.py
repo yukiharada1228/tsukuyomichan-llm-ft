@@ -34,9 +34,7 @@ def load_adapter_config(adapter_path):
     """
     config_path = os.path.join(adapter_path, "adapter_config.json")
     if not os.path.exists(config_path):
-        raise FileNotFoundError(
-            f"アダプター設定ファイルが見つかりません: {config_path}"
-        )
+        raise FileNotFoundError(f"アダプター設定ファイルが見つかりません: {config_path}")
 
     with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -152,7 +150,7 @@ def main():
 
     try:
         # マージ実行
-        merged_path = merge_model_and_adapter(
+        merge_model_and_adapter(
             base_model_path=args.base_model,
             adapter_path=adapter_path,
             output_path=output_path,
